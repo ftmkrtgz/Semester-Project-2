@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../dist/css/styles.css" />
+    <script
+      src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/ce1b7138a5.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <div class="container text-center mx-auto my-5">
+      <div class="row">
+        <div
+          class="col-lg-6 bg-success-subtle rounded-5 mx-auto my-5 py-4 pt-5 pb-5"
+        >
+          <img
+            src="../../Images/Color logo.jpg"
+            alt="Logo"
+            style="width: 18%; height: 80px; border-radius: 50%"
+          />
+          <h2 class="fw-bold">Sign Up</h2>
+          <p class="fst-italic">
+            Fill in required details to create a Online Auction account
+          </p>
+
+          <form class="text-dark px-4 rounded" id="registerForm">
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control border bg-input-color"
+                name="name"
+                placeholder="Username"
+                required
+                pattern="^[\w]+$"
+                title="User name must only contain letters, numbers and underscore. Ex. SaraParker1 or Sara_Parker_1"
+                maxlength="20"
+              />
+              <label for="name"
+                >Username <span class="text-primary"> *</span></label
+              >
+            </div>
+
+            <div class="form-floating mb-3">
+              <input
+                type="email"
+                class="form-control"
+                id="floatingInput"
+                placeholder="name@example.com"
+                name="email"
+                required
+                required
+                pattern="^[\w\-.]+@(stud.)?noroff.no$"
+                title="Only user with @noroff.no or @stud.noroff.no email can register."
+              />
+              <label for="floatingInput"
+                >Email address <span class="text-primary"> *</span></label
+              >
+            </div>
+
+            <div class="form-floating">
+              <input
+                type="password"
+                class="form-control"
+                id="floatingPassword"
+                placeholder="Password"
+                name="password"
+                required
+                minlength="8"
+              />
+              <label for="floatingPassword"
+                >Password<span class="text-primary"> *</span></label
+              >
+            </div>
+
+            <div class="form-floating">
+              <input
+                type="url"
+                class="form-control my-3"
+                name="avatar"
+                placeholder="Avatar"
+              />
+              <label for="verify-password">Avatar(url)</label>
+            </div>
+
+            <div id="registerFeedback" class="pb-2 ps-2"></div>
+            <button
+              class="w-100 btn btn-lg btn-primary text-light"
+              type="submit"
+            >
+              Sign Up
+            </button>
+            <p class="text-center text-muted mt-2 fw-semibold">
+              Already have an account?
+              <a href="/profile/login/" id="linkSignup" class="text-primary"
+                >Login</a
+              >
+            </p>
+          </form>
+        </div>
+      </div>
+      <footer>
+        <hr class="opacity-75 mt-4" />
+        <h6>
+          <img src="../../Images/Vector.png" alt="c" style="height: 14px" />
+          2024 Online Auction | Designed by Fatma Kurtgozu
+        </h6>
+      </footer>
+    </div>
+  </body>
+</html>
