@@ -26,7 +26,7 @@ export async function login(profile) {
 
     if (response.ok) {
       alert("You are now logged in");
-      window.location.replace("/profile/login/home.html");
+      window.location.replace("/profile/index.html");
     } else {
       alert("Write your email and password again");
     }

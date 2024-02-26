@@ -13,12 +13,13 @@
       src="https://kit.fontawesome.com/ce1b7138a5.js"
       crossorigin="anonymous"
     ></script>
+    <script src="/src/js/index.mjs" type="module" defer></script>
     <title>Online Auction | Profile page</title>
   </head>
   <body>
     <nav class="navbar fixed-top bg-white">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"
+        <a class="navbar-brand" href="/"
           ><img
             src="../../Images/Color logo with background.jpg"
             alt="Logo"
@@ -52,20 +53,55 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-align-center menu">
             <li class="nav-item">
-              <a class="nav-link" id="explore" aria-current="page" href="#"
+              <a class="nav-link" id="explore" aria-current="page" href="/"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                id="explore"
+                aria-current="page"
+                href="/products/"
                 >Explore</a
               >
             </li>
             <li class="nav-item">
-              <a href="#" class="py-1 px-2 text-decoration-none" id="log-in">
+              <a
+                class="nav-link"
+                id="explore"
+                aria-current="page"
+                href="/profile/register/index.html"
+                data-visible="loggedOut"
+                >Sign Up</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                href="profile/login/index.html"
+                class="focus-ring mb-2 mt-2 py-1 px-2 text-decoration-none border rounded-2"
+                id="log-in"
+                data-visible="loggedOut"
+              >
+                Log In
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                href="/profile/index.html"
+                class="py-1 px-2 text-decoration-none"
+                id="log-in"
+                data-visible="loggedIn"
+              >
                 Profile
               </a>
             </li>
             <li class="nav-item">
               <a
-                href="#"
-                class="d-inline-flex focus-ring py-1 px-2 text-decoration-none bg-success text-white border rounded-2"
+                href="/"
+                class="focus-ring py-1 px-2 text-decoration-none bg-success text-white border rounded-2 my-2 btn-logout"
                 id="log-in"
+                data-visible="loggedIn"
               >
                 Log Out
               </a>
