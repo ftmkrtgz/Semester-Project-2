@@ -2,6 +2,16 @@ $green: #494e86;
 $blue: #494e86;
 $yellow: #7d4986;
 
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-size: 1.3vw;
+}
+
 #search-input {
   width: 40vw;
 }
@@ -19,6 +29,9 @@ $yellow: #7d4986;
 #toggler {
   color: #494e86;
 }
+.navbar-toggler {
+  margin-right: 25px;
+}
 i {
   font-size: 30px;
 }
@@ -30,10 +43,46 @@ i {
 
 #login {
   width: 100%;
-  height: 70px;
+  height: 70%;
   font-size: 20px;
 }
-
+.how-works {
+  margin-top: 100px;
+}
 .email {
-  height: 60px;
+  height: 50px;
+}
+.seller {
+  width: 20%;
+}
+
+@media all and (max-width: 610px) {
+  body {
+    font-size: 16px;
+  }
+  #search-input {
+    width: 35vw;
+  }
+  .navbar-brand img {
+    width: 30vw;
+    height: 15vw;
+  }
+  #search-btn {
+    display: none;
+  }
+  .navbar-toggler {
+    margin-right: 0;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .how-works {
+    margin-top: 85px;
+  }
+}
+
+@media all and (max-width: 760px) {
+  .seller {
+    width: 50%;
+  }
 }

@@ -13,7 +13,7 @@
       src="https://kit.fontawesome.com/ce1b7138a5.js"
       crossorigin="anonymous"
     ></script>
-    <title>Profile</title>
+    <title>Online Auction | Profile page</title>
   </head>
   <body>
     <nav class="navbar fixed-top bg-white">
@@ -22,8 +22,8 @@
           ><img
             src="../../Images/Color logo with background.jpg"
             alt="Logo"
-            width="100%"
-            height="75px"
+            width="150vw"
+            height="80vw"
         /></a>
         <form class="d-flex" role="search">
           <input
@@ -33,10 +33,12 @@
             placeholder="Search"
             aria-label="Search"
           />
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <button class="btn btn-outline-success" type="submit" id="search-btn">
+            Search
+          </button>
         </form>
         <button
-          class="navbar-toggler me-4"
+          class="navbar-toggler"
           id="toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -72,14 +74,250 @@
         </div>
       </div>
     </nav>
-    <div class="container">
-      <footer>
-        <hr class="opacity-75 mt-4" />
-        <h6>
-          <img src="Images/Vector.png" alt="c" style="height: 14px" /> 2024
-          Online Auction | Designed by Fatma Kurtgozu
-        </h6>
-      </footer>
-    </div>
+    <section>
+      <div class="container-fluid how-works">
+        <div
+          class="row row-cols-1 row-cols-md-2 row-cols-sm-2 pb-4 justify-content-center"
+        >
+          <div
+            class="col-md-4 col-xs-5 col-lg-4 col-8 border border-black mx-4 pb-4 rounded-5 text-center bg-success-subtle mt-4"
+            style="height: 70%"
+          >
+            <img
+              src="../Images/woman2.jpg"
+              alt="Avatar picture"
+              style="width: 60%"
+              class="rounded-circle pt-2"
+              4
+            />
+            <button
+              type="button"
+              class="btn btn-warning rounded-5 mt-4 px-4 fs-5"
+            >
+              Update Avatar
+            </button>
+          </div>
+
+          <div
+            class="col-md-7 col-lg-7 col-sm-12 border border-black pt-5 mt-4 pb-4 rounded-5 bg-success-subtle"
+          >
+            <h3 class="mx-4 fw-semibold pb-2">Personal Details</h3>
+            <div
+              class="col-lg-11 col-sm-12 border border-black mx-auto pt-4 pb-4 rounded-3"
+            >
+              <p class="fw-semibold mx-3 fs-5 mx-3">Name : Fatma Kurtgozu</p>
+              <p class="fw-semibold mx-3 fs-5 mx-3">
+                E-mail : fatma@stud.noroff.no
+              </p>
+              <p class="fw-semibold mx-3 fs-5 mx-3">Credit : $1000</p>
+            </div>
+            <div class="text-center">
+              <button
+                type="button"
+                class="btn btn-warning rounded-5 mt-4 px-4 fs-5"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+              >
+                Add New Listing
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="staticBackdropLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog bg-light">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body bg-success-subtle rounded-5 mx-1 my-1">
+              <h2 class="text-center fw-semibold">Add New Listing</h2>
+              <p class="fst-italic text-center">Add something to sell</p>
+              <form class="bg-white p-5 rounded w-100 mt-3" id="addListingForm">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="Title"
+                    name="title"
+                    required
+                  />
+                  <label for="floatingInput"
+                    >Title <span class="text-primary"> *</span></label
+                  >
+                </div>
+
+                <div class="form-floating mb-3">
+                  <textarea
+                    type="text"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="Description"
+                    name="description"
+                    rows="3"
+                  ></textarea>
+                  <label for="floatingInput">Description </label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="Ends"
+                    name="endsDate"
+                    required
+                  />
+                  <label for="floatingInput">Ends Date </label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="floatingInput"
+                    placeholder="Tags"
+                    name="tags"
+                    placeholder="tags"
+                    pattern="^[0-9a-zA-Z_,]*$"
+                    title="Tags must be separeted by comma."
+                  />
+                  <label for="floatingInput">Tags </label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="url"
+                    class="form-control border bg-input-color"
+                    name="media"
+                    placeholder="media"
+                  />
+                  <label for="media">Gallery(url) </label>
+                </div>
+
+                <div id="createListingFeedback"></div>
+                <button class="w-100 btn btn-lg btn-success" type="submit">
+                  Add
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2 style="margin-left: 10%" class="my-4">My Bids</h2>
+      <div class="container-lg bg-success-subtle border border-black rounded-5">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 pb-4">
+          <div class="col">
+            <div class="card border-secondary text-center mt-4">
+              <img
+                src="../Images/P2PD3B0.jpg"
+                class="card-img-top"
+                alt="Dekstop Computer"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center">Dekstop Computer</h5>
+                <hr />
+                <div class="row">
+                  <div class="col">
+                    <h6 class="text-success fw-bold">Current Bid:</h6>
+                    <p>$14,750 (USD)</p>
+                  </div>
+                  <div class="col">
+                    <h6 class="text-success fw-bold">Ends In:</h6>
+                    <p>3d 45h 60m</p>
+                  </div>
+                </div>
+                <a href="#" class="btn btn-success">Submit A Bid</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2 style="margin-left: 10%" class="my-4">Winning Bids</h2>
+      <div class="container-lg bg-success-subtle border border-black rounded-5">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 pb-4">
+          <div class="col">
+            <div class="card border-secondary text-center mt-4">
+              <img
+                src="../Images/P2PD3B0.jpg"
+                class="card-img-top"
+                alt="Dekstop Computer"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center">Dekstop Computer</h5>
+                <hr />
+                <div class="row">
+                  <div class="col">
+                    <h6 class="text-success fw-bold">Current Bid:</h6>
+                    <p>$14,750 (USD)</p>
+                  </div>
+                  <div class="col">
+                    <h6 class="text-success fw-bold">Ends In:</h6>
+                    <p>3d 45h 60m</p>
+                  </div>
+                </div>
+                <a href="#" class="btn btn-success">Submit A Bid</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2 style="margin-left: 10%" class="my-4">My Listing</h2>
+      <div class="container-lg bg-success-subtle border border-black rounded-5">
+        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 pb-4">
+          <div class="col">
+            <div class="card border-secondary text-center mt-4">
+              <img
+                src="../Images/P2PD3B0.jpg"
+                class="card-img-top"
+                alt="Dekstop Computer"
+              />
+              <div class="card-body">
+                <h5 class="card-title text-center">Dekstop Computer</h5>
+                <hr />
+                <div class="row">
+                  <div class="col">
+                    <h6 class="text-success fw-bold">Current Bid:</h6>
+                    <p>$14,750 (USD)</p>
+                  </div>
+                  <div class="col">
+                    <h6 class="text-success fw-bold">Ends In:</h6>
+                    <p>3d 45h 60m</p>
+                  </div>
+                </div>
+                <a href="#" class="btn btn-success">Submit A Bid</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <hr class="opacity-75 mt-4" />
+      <h6 class="text-center">
+        <img src="../../Images/Vector.png" alt="c" style="height: 14px" />
+        2024 Online Auction | Designed by Fatma Kurtgozu
+      </h6>
+    </footer>
   </body>
 </html>

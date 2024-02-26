@@ -13,7 +13,7 @@
       src="https://kit.fontawesome.com/ce1b7138a5.js"
       crossorigin="anonymous"
     ></script>
-    <title>Document</title>
+    <title>Online Auction | Home page</title>
   </head>
   <body>
     <nav class="navbar fixed-top bg-white">
@@ -22,8 +22,8 @@
           ><img
             src="Images/Color logo with background.jpg"
             alt="Logo"
-            width="100%"
-            height="75px"
+            width="150vw"
+            height="80vw"
         /></a>
         <form class="d-flex" role="search">
           <input
@@ -33,10 +33,12 @@
             placeholder="Search"
             aria-label="Search"
           />
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <button class="btn btn-outline-success" type="submit" id="search-btn">
+            Search
+          </button>
         </form>
         <button
-          class="navbar-toggler me-4"
+          class="navbar-toggler"
           id="toggler"
           type="button"
           data-bs-toggle="collapse"
@@ -68,22 +70,19 @@
       </div>
     </nav>
     <section>
-      <div
-        class="container-fuild pt-3 text-center bg-success-subtle"
-        style="margin-top: 100px"
-      >
+      <div class="container-fuild pt-3 text-center bg-success-subtle how-works">
         <h2>How it works?</h2>
-        <div class="row mx-auto mt-4">
-          <div class="col">
-            <div class="card pt-3 work" style="width: 11rem; height: 10rem">
+        <div class="row mx-1 mt-2 justify-content-center">
+          <div class="col-lg-2 col-md-2 col-6 col-sm-4 mt-2">
+            <div class="card pt-3 work" style="width: 100%; height: 100%">
               <img src="Images/SignUp.png" class="card-img-top" alt="Sign Up" />
               <div class="card-body">
                 <h5 class="card-title">Sign Up</h5>
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card work pt-3" style="width: 11rem; height: 10rem">
+          <div class="col-lg-2 col-md-2 col-6 col-sm-4 mt-2">
+            <div class="card work pt-3" style="width: 100%; height: 100%">
               <img
                 src="Images/Verify.png"
                 class="card-img-top"
@@ -94,8 +93,8 @@
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card work pt-3" style="width: 11rem; height: 10rem">
+          <div class="col-lg-2 col-md-2 col-6 col-sm-4 mt-2">
+            <div class="card work pt-3" style="width: 100%; height: 100%">
               <img
                 src="Images/Upload.png"
                 class="card-img-top"
@@ -106,8 +105,8 @@
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card work pt-3" style="width: 11rem; height: 10rem">
+          <div class="col-lg-2 col-md-2 col-6 col-sm-4 mt-2">
+            <div class="card work pt-3" style="width: 100%; height: 100%">
               <img
                 src="Images/Submit.png"
                 class="card-img-top"
@@ -118,8 +117,8 @@
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card pt-3 work" style="width: 11rem; height: 10rem">
+          <div class="col-lg-2 col-md-2 col-6 col-sm-4 mt-2">
+            <div class="card pt-3 work" style="width: 100%; height: 100%">
               <img
                 src="Images/Win.png"
                 class="card-img-top"
@@ -130,8 +129,8 @@
               </div>
             </div>
           </div>
-          <div class="col">
-            <div class="card pt-3 work" style="width: 11rem; height: 10rem">
+          <div class="col-lg-2 col-md-2 col-sm-4 col-6 mt-2">
+            <div class="card pt-3 work" style="width: 100%; height: 100%">
               <img src="Images/Enjoy.png" class="card-img-top" alt="Enjoy it" />
               <div class="card-body">
                 <h5 class="card-title">Enjoy it</h5>
@@ -139,8 +138,8 @@
             </div>
           </div>
         </div>
-        <div class="row justify-content-evenly">
-          <div class="col-3">
+        <div class="row justify-content-evenly pb-4">
+          <div class="col-lg-4 col-md-4 col-sm-5 col-5">
             <button
               type="button"
               class="btn btn-outline-dark mt-4 mb-4"
@@ -149,7 +148,7 @@
               Log In
             </button>
           </div>
-          <div class="col-3">
+          <div class="col-lg-4 col-md-4 col-sm-5 col-5">
             <button
               type="button"
               class="btn btn-outline-dark mt-4 mb-4"
@@ -164,7 +163,7 @@
         <h4 class="text-bg-primary">
           Be the first to hear about news ans special discounts!
         </h4>
-        <div class="pb-4 mt-5 col-8 mx-auto">
+        <div class="pb-3 mt-4 col-10 col-md-8 mx-auto">
           <input
             type="email"
             class="form-control email"
@@ -177,12 +176,11 @@
     <section>
       <div class="container-fluid bg-success-subtle text-center pb-4">
         <h1 class="fst-italic fw-light text-center pt-4">CURRENT AUCTIONS</h1>
-        <div class="row row-cols-2 row-cols-md-3 g-4 pb-4">
+        <div
+          class="row row-cols-1 row-cols-md-3 row-cols-sm-2 pb-4 justify-content-center"
+        >
           <div class="col">
-            <div
-              class="card border-secondary text-center mt-4"
-              style="width: 18rem"
-            >
+            <div class="card border-secondary text-center mt-4">
               <img
                 src="Images/P2PD3B0.jpg"
                 class="card-img-top"
@@ -206,10 +204,7 @@
             </div>
           </div>
           <div class="col">
-            <div
-              class="card border-secondary text-center mt-4"
-              style="width: 18rem"
-            >
+            <div class="card border-secondary text-center mt-4">
               <img
                 src="Images/P2PD3B0.jpg"
                 class="card-img-top"
@@ -233,10 +228,7 @@
             </div>
           </div>
           <div class="col">
-            <div
-              class="card border-secondary text-center mt-4"
-              style="width: 18rem"
-            >
+            <div class="card border-secondary text-center mt-4">
               <img
                 src="Images/P2PD3B0.jpg"
                 class="card-img-top"
