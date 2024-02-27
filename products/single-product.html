@@ -144,12 +144,23 @@
               <div class="col-6">3d 45h 20d</div>
             </div>
             <hr />
-            <button
-              type="button"
-              class="btn btn-success rounded-3 mt-3 px-2 fs-5 mb-2"
-            >
-              BID NOW
-            </button>
+            <form id="addBidForm" class="d-flex align-items-center py-2 pb-5">
+              <label class="fs-7 text-muted text-uppercase pe-2 text-start">
+                <input
+                  type="number"
+                  class="form-control text-muted"
+                  name="bid"
+                  placeholder="coin"
+                  min="0"
+                  autofocus
+              /></label>
+              <button
+                type="submit"
+                class="btn btn-success rounded-3 mt-3 px-2 fs-5 mb-2"
+              >
+                BID NOW
+              </button>
+            </form>
           </div>
         </div>
       </div>

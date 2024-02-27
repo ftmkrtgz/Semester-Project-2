@@ -56,6 +56,13 @@ i {
   width: 20%;
 }
 
+.error {
+  color: $error;
+}
+
+.success {
+  color: $success;
+}
 @media all and (max-width: 610px) {
   body {
     font-size: 16px;
