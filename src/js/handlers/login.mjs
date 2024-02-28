@@ -1,18 +1,24 @@
 import { login } from "../api/auth/login.mjs";
-import { displayError } from "./error.mjs";
+import { displayMessage } from "../setting/message.mjs";
+import { load } from "../storage/load.mjs";
 
-export function setLoginFormListener() {
+export function submitLoginForm() {
   const form = document.querySelector("#loginForm");
-
   if (form) {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const form = event.target;
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const form = e.target;
       const formData = new FormData(form);
-      const profile = Object.fromEntries(formData.entries());
-
-      // Send it to the API
-      login(profile);
+      const { email, password } = Object.fromEntries(formData.entries());
+      try {
+        await login(email, password);
+        setTimeout(() => {
+          const { name } = load("user");
+          location.href = `/profile/?name=${name}`;
+        }, 500);
+      } catch (error) {
+        displayMessage("loginFeedback", error.message, "error");
+      }
     });
   }
 }

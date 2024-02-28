@@ -1,34 +1,21 @@
-import { API_SOCIAL_URL } from "../constants.mjs";
+import { BASE_URL } from "../constants.mjs";
 import * as storage from "../../storage/index.mjs";
+import { headers } from "../headers.mjs";
 
-const action = "/auth/login";
-const method = "post";
-
-export async function login(profile) {
+export async function login(email, password) {
   try {
-    const loginURL = API_SOCIAL_URL + action;
-
-    const body = JSON.stringify(profile);
-
-    const response = await fetch(loginURL, {
-      headers: {
-        "Content-type": "application/json",
-      },
-      method,
-      body,
+    const response = await fetch(`${BASE_URL}/auth/login`, {
+      method: "POST",
+      headers: headers(),
+      body: JSON.stringify({ email, password }),
     });
 
-    const { accessToken, ...user } = await response.json();
-
-    storage.save("token", accessToken);
-
-    storage.save("profile", user);
-
     if (response.ok) {
-      alert("You are now logged in");
-      window.location.replace("/profile/index.html");
+      const { accessToken, ...user } = await response.json();
+      storage.save("token", accessToken);
+      storage.save("user", user);
     } else {
-      alert("Write your email and password again");
+      throw new Error("Incorrect username or password.");
     }
   } catch (error) {
     throw error;

@@ -1,7 +1,3 @@
-$green: #494e86;
-$blue: #494e86;
-$yellow: #7d4986;
-
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   width: 100%;
@@ -18,7 +14,7 @@ body {
 
 #explore,
 #log-in {
-  color: #494e86;
+  color: $green;
   font-size: 24px;
 }
 
@@ -57,12 +53,19 @@ i {
 }
 
 .error {
-  color: $error;
+  color: red;
 }
 
 .success {
-  color: $success;
+  color: $teal;
 }
+
+@media all and (max-width: 760px) {
+  .seller {
+    width: 50%;
+  }
+}
+
 @media all and (max-width: 610px) {
   body {
     font-size: 16px;
@@ -85,11 +88,5 @@ i {
 @media all and (max-width: 500px) {
   .how-works {
     margin-top: 85px;
-  }
-}
-
-@media all and (max-width: 760px) {
-  .seller {
-    width: 50%;
   }
 }

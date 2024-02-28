@@ -1,17 +1,25 @@
 import { register } from "../api/auth/register.mjs";
+import { displayMessage } from "../setting/message.mjs";
 
-export function setRegisterFormListener() {
+export function submitRegisterForm() {
   const form = document.querySelector("#registerForm");
 
   if (form) {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const form = event.target;
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const form = e.target;
       const formData = new FormData(form);
-      const profile = Object.fromEntries(formData.entries());
-
-      // Send it to the API
-      register(profile);
+      const { name, email, password, avatar } = Object.fromEntries(
+        formData.entries()
+      );
+      try {
+        await register(name, email, password, avatar);
+        setTimeout(() => {
+          location.assign("/profile/login");
+        }, 300);
+      } catch (error) {
+        displayMessage("registerFeedback", error.message, "error");
+      }
     });
   }
 }

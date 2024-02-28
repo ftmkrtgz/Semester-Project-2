@@ -1,6 +1,6 @@
-import { remove } from "../../storage/index.mjs";
+import { remove } from "../../storage/remove.mjs";
 
 export function logout() {
+  remove("user");
   remove("token");
-  remove("profile");
 }

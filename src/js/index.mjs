@@ -1,19 +1,41 @@
+import { header } from "./templates/header/header.mjs";
 import * as listeners from "./handlers/index.mjs";
-import { header } from "./ui/header/header.mjs";
+import * as pages from "./pages/index.mjs";
 
 header();
 
 const path = location.pathname;
+switch (path) {
+  case "/":
+    pages.renderHomePage();
+    listeners.search();
+    listeners.logoutListener();
+    break;
 
-if (path === "/profile/login/index.html") {
-  listeners.setLoginFormListener();
-} else if (path === "/profile/register/index.html") {
-  listeners.setRegisterFormListener();
-} else if (
-  path === "/" ||
-  "/profile" ||
-  "/products" ||
-  "/products/single-product.html"
-) {
-  listeners.logoutListener();
+  case "/profile/login/":
+    listeners.submitLoginForm();
+    break;
+
+  case "/profile/register/":
+    listeners.submitRegisterForm();
+    break;
+
+  case "/profile/":
+    pages.renderProfilePage();
+    listeners.logoutListener();
+    listeners.submitUpdateProfileAvatarForm();
+    listeners.submitAddListingForm();
+    break;
+
+  case "/products/":
+    pages.renderListingsPage();
+    listeners.search();
+    listeners.logoutListener();
+    break;
+
+  case "/products/single-product/":
+    pages.renderSingleListingPage();
+    listeners.logoutListener();
+    listeners.submitAddBidForm();
+    break;
 }
