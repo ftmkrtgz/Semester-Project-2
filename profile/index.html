@@ -88,7 +88,7 @@
             </li>
             <li class="nav-item">
               <a
-                href="/profile/index.html"
+                href="/profile/"
                 class="py-1 px-2 text-decoration-none"
                 id="log-in"
                 data-visible="loggedIn"
@@ -113,101 +113,46 @@
     <section>
       <div class="container-fluid how-works">
         <div
-          class="row row-cols-1 row-cols-md-2 row-cols-sm-2 pb-4 justify-content-center"
+          class="row row-cols-1 row-cols-md-2 row-cols-sm-2 pb-4 justify-content-center align-items-center"
         >
           <div
-            class="col-md-4 col-xs-5 col-lg-4 col-8 border border-black mx-4 pb-4 rounded-5 text-center bg-success-subtle mt-4"
+            class="col-md-4 col-xs-5 col-lg-4 col-8 border border-black rounded-5 text-center bg-success-subtle mt-4 pb-4 mx-auto"
             style="height: 70%"
           >
             <img
-              src="../Images/woman2.jpg"
+              src="/Images/default-avatar.png"
               alt="Avatar picture"
               style="width: 60%"
               class="rounded-circle pt-2"
-              4
+              id="profileImageContainer"
             />
             <button
               type="button"
               class="btn btn-warning rounded-5 mt-4 px-4 fs-5"
               data-bs-toggle="modal"
               data-isUsersProfile="true"
-              data-bs-target="#updateAvatarModal"
+              data-bs-target="#updateProfileAvatar"
             >
               Update Avatar
             </button>
           </div>
-          <!-- Update avatar form modal -->
+
           <div
-            class="modal-dialog modal-dialog-centered hidden"
-            data-isUsersProfile="true"
+            class="col-md-7 col-lg-7 col-sm-12 border border-black pt-5 mt-4 pb-4 rounded-5 bg-success-subtle mx-auto"
           >
-            <div
-              class="modal fade"
-              id="updateAvatarModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalCenterTitle"
-              style="display: block"
-              aria-modal="true"
-              role="dialog"
-            >
-              <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content bg-background">
-                  <form id="updateProfileAvatarForm">
-                    <div class="modal-header">
-                      <h3 class="modal-title fs-5" id="exampleModalCenterTitle">
-                        Update Avatar Image
-                      </h3>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <img
-                        id="avatar-preview"
-                        class="w-100 rounded-circle"
-                        src="../images/default-avatar.png"
-                        onerror="this.src='../images/default-avatar.png'"
-                        alt="avatar image"
-                      />
-                      <label class="form-label" for="avatar">Avatar</label>
-                      <input
-                        type="url"
-                        class="form-control"
-                        name="avatar"
-                        id="avatar"
-                        placeholder="example.com/avatar.jpg"
-                        required
-                      />
-                      <div id="updateProfileAvatarFeedback"></div>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="submit"
-                        class="w-100 btn btn-lg btn-success"
-                      >
-                        Submit
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="col-md-7 col-lg-7 col-sm-12 border border-black pt-5 mt-4 pb-4 rounded-5 bg-success-subtle"
-          >
-            <h3 class="mx-4 fw-semibold pb-2">Personal Details</h3>
+            <h3 class="ms-4 fw-semibold pb-2">Personal Details</h3>
             <div
               class="col-lg-11 col-sm-12 border border-black mx-auto pt-4 pb-4 rounded-3"
             >
-              <p class="fw-semibold mx-3 fs-5 mx-3">Name : Fatma Kurtgozu</p>
-              <p class="fw-semibold mx-3 fs-5 mx-3">
-                E-mail : fatma@stud.noroff.no
+              <p class="fw-semibold mx-3 fs-5 mx-3" id="nameContainer">
+                Name :
               </p>
-              <p class="fw-semibold mx-3 fs-5 mx-3">Credit : $1000</p>
+              <p class="fw-semibold mx-3 fs-5 mx-3" id="emailContainer">
+                E-mail :
+              </p>
+              <p class="fw-semibold mx-3 fs-5 mx-3" id="creditContainer">
+                Credit :
+              </p>
             </div>
             <div class="text-center">
               <button
@@ -218,6 +163,63 @@
               >
                 Add New Listing
               </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Update avatar form modal -->
+      <div
+        class="modal-dialog modal-dialog-centered hidden"
+        data-isUsersProfile="true"
+      >
+        <div
+          class="modal fade"
+          id="updateProfileAvatar"
+          tabindex="-1"
+          aria-labelledby="exampleModalCenterTitle"
+          aria-modal="true"
+          role="dialog"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-background">
+              <form id="updateProfileAvatarForm">
+                <div class="modal-header">
+                  <h3 class="modal-title fs-5" id="exampleModalCenterTitle">
+                    Update Avatar Image
+                  </h3>
+                  <button
+                    type="url"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <img
+                    id="avatar-preview"
+                    class="w-100 rounded-circle"
+                    src="../images/default-avatar.png"
+                    onerror="this.src='../images/default-avatar.png'"
+                    alt="avatar image"
+                  />
+                  <label class="form-label" for="avatar">Avatar</label>
+                  <input
+                    type="url"
+                    class="form-control"
+                    name="avatar"
+                    id="avatar"
+                    placeholder="example.com/avatar.jpg"
+                    required
+                  />
+                  <div id="updateProfileAvatarFeedback"></div>
+                </div>
+                <div class="modal-footer">
+                  <button type="submit" class="w-100 btn btn-lg btn-success">
+                    Submit
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -244,7 +246,10 @@
             <div class="modal-body bg-success-subtle rounded-5 mx-1 my-1">
               <h2 class="text-center fw-semibold">Add New Listing</h2>
               <p class="fst-italic text-center">Add something to sell</p>
-              <form class="bg-white p-5 rounded w-100 mt-3" id="addListingForm">
+              <form
+                class="bg-white p-5 rounded w-100 mt-3"
+                id="addListingFormOption"
+              >
                 <div class="form-floating mb-3">
                   <input
                     type="text"
@@ -273,11 +278,10 @@
 
                 <div class="form-floating mb-3">
                   <input
-                    type="text"
+                    type="datetime-local"
                     class="form-control"
                     id="floatingInput"
-                    placeholder="Ends"
-                    name="endsDate"
+                    name="endsAt"
                     required
                   />
                   <label for="floatingInput">Ends Date </label>
@@ -318,98 +322,24 @@
       </div>
     </section>
     <section>
-      <h2 style="margin-left: 10%" class="my-4">My Bids</h2>
+      <h2 style="margin-left: 10%" class="my-4">My Listings</h2>
       <div class="container-lg bg-success-subtle border border-black rounded-5">
-        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 pb-4">
-          <div class="col">
-            <div class="card border-secondary text-center mt-4">
-              <img
-                src="../Images/P2PD3B0.jpg"
-                class="card-img-top"
-                alt="Dekstop Computer"
-              />
-              <div class="card-body">
-                <h5 class="card-title text-center">Dekstop Computer</h5>
-                <hr />
-                <div class="row">
-                  <div class="col">
-                    <h6 class="text-success fw-bold">Current Bid:</h6>
-                    <p>$14,750 (USD)</p>
-                  </div>
-                  <div class="col">
-                    <h6 class="text-success fw-bold">Ends In:</h6>
-                    <p>3d 45h 60m</p>
-                  </div>
-                </div>
-                <a href="#" class="btn btn-success">Submit A Bid</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div
+          class="row row-cols-1 row-cols-md-3 row-cols-sm-2 pb-4"
+          id="listingsContainer"
+        ></div>
       </div>
     </section>
     <section>
       <h2 style="margin-left: 10%" class="my-4">Winning Bids</h2>
       <div class="container-lg bg-success-subtle border border-black rounded-5">
-        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 pb-4">
-          <div class="col">
-            <div class="card border-secondary text-center mt-4">
-              <img
-                src="../Images/P2PD3B0.jpg"
-                class="card-img-top"
-                alt="Dekstop Computer"
-              />
-              <div class="card-body">
-                <h5 class="card-title text-center">Dekstop Computer</h5>
-                <hr />
-                <div class="row">
-                  <div class="col">
-                    <h6 class="text-success fw-bold">Current Bid:</h6>
-                    <p>$14,750 (USD)</p>
-                  </div>
-                  <div class="col">
-                    <h6 class="text-success fw-bold">Ends In:</h6>
-                    <p>3d 45h 60m</p>
-                  </div>
-                </div>
-                <a href="#" class="btn btn-success">Submit A Bid</a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div
+          class="row row-cols-1 row-cols-md-3 row-cols-sm-2 pb-4"
+          id="winsContainer"
+        ></div>
       </div>
     </section>
-    <section>
-      <h2 style="margin-left: 10%" class="my-4">My Listing</h2>
-      <div class="container-lg bg-success-subtle border border-black rounded-5">
-        <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 pb-4">
-          <div class="col">
-            <div class="card border-secondary text-center mt-4">
-              <img
-                src="../Images/P2PD3B0.jpg"
-                class="card-img-top"
-                alt="Dekstop Computer"
-              />
-              <div class="card-body">
-                <h5 class="card-title text-center">Dekstop Computer</h5>
-                <hr />
-                <div class="row">
-                  <div class="col">
-                    <h6 class="text-success fw-bold">Current Bid:</h6>
-                    <p>$14,750 (USD)</p>
-                  </div>
-                  <div class="col">
-                    <h6 class="text-success fw-bold">Ends In:</h6>
-                    <p>3d 45h 60m</p>
-                  </div>
-                </div>
-                <a href="#" class="btn btn-success">Submit A Bid</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+
     <footer>
       <hr class="opacity-75 mt-4" />
       <h6 class="text-center">
