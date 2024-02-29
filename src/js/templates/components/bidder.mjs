@@ -14,7 +14,9 @@ function bidderTemplate(bids) {
   amount.classList.add("col-2");
   amount.innerHTML = `${bids.amount} $`;
 
-  card.append(name, date, amount);
+  const line = document.createElement("hr");
+
+  card.append(name, date, amount, line);
   return card;
 }
 

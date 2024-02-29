@@ -44,7 +44,7 @@ function singleCardTemplate(listing) {
     "card-footer",
     "d-flex",
     "bg-success-subtle",
-    "justify-content-between",
+    "justify-content-between"
   );
 
   const btnEdit = document.createElement("button");
@@ -57,7 +57,7 @@ function singleCardTemplate(listing) {
 
   card.append(card2);
   card2.append(img, cardBody);
-  cardBody.append(cardTitle, cardContent, line, cardFooter);
+  cardBody.append(cardTitle, line, cardContent, cardFooter);
   cardContent.append(EndsIn, cardDate);
 
   cardFooter.append(btnEdit);

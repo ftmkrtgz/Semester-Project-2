@@ -24,7 +24,6 @@ function singleCardTemplate(listing) {
   cardTitle.textContent = listing.title;
 
   const line = document.createElement("hr");
-  cardBody.append(line);
 
   const cardContent = document.createElement("div");
   cardContent.classList.add("row");
@@ -76,7 +75,7 @@ function singleCardTemplate(listing) {
   card.append(cardLink);
   cardLink.append(card2);
   card2.append(img, cardBody);
-  cardBody.append(cardTitle, cardContent);
+  cardBody.append(cardTitle, line, cardContent);
   cardContent.append(cardCol, cardCol2, cardButton);
   cardCol.append(bids, bidsAmount);
   cardCol2.append(EndsIn, cardDate);
