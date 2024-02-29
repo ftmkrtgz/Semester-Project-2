@@ -9,15 +9,13 @@ export async function renderProfilePage() {
   const user = await getProfile(name);
 
   const profileImageContainer = document.querySelector(
-    "#profileImageContainer",
+    "#profileImageContainer"
   );
   const modalImg = document.querySelector("#avatar-preview");
   const nameContainer = document.querySelector("#nameContainer");
   const emailContainer = document.querySelector("#emailContainer");
-
   const creditContainer = document.querySelector("#creditContainer");
   const listingsContainer = document.querySelector("#listingsContainer");
-
   const winsContainer = document.querySelector("#winsContainer");
 
   nameContainer.innerText += `  ${user.name}`;

@@ -53,11 +53,15 @@ i {
 }
 
 .error {
-  color: red;
+  color: $error;
+  font-weight: bold;
+  text-align: center;
 }
 
 .success {
   color: $teal;
+  font-weight: bold;
+  text-align: center;
 }
 
 @media all and (max-width: 760px) {
