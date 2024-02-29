@@ -8,6 +8,6 @@ export function logoutListener() {
       setTimeout(() => {
         location.assign("/");
       }, 500);
-    })
+    }),
   );
 }

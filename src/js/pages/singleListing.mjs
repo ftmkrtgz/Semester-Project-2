@@ -18,7 +18,7 @@ export async function renderSingleListingPage() {
   const listingBids = document.querySelector("#listingBids");
 
   const biddingHistoryContainer = document.querySelector(
-    "#biddingHistoryContainer"
+    "#biddingHistoryContainer",
   );
   const sellerContainer = document.querySelector("#sellerContainer");
 
@@ -40,7 +40,7 @@ export async function renderSingleListingPage() {
   if (Array.isArray(listing.bids) && listing.bids.length === 0) {
     renderErrorMessage(
       "The item dosn't have any bids yet",
-      biddingHistoryContainer
+      biddingHistoryContainer,
     );
   } else {
     renderBiddingHistoryTemplate(listing.bids, biddingHistoryContainer);

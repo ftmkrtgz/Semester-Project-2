@@ -44,7 +44,7 @@ function singleCardTemplate(listing) {
     "card-footer",
     "d-flex",
     "bg-success-subtle",
-    "justify-content-between"
+    "justify-content-between",
   );
 
   const btnEdit = document.createElement("button");

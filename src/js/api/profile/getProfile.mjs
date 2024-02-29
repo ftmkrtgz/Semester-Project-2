@@ -24,10 +24,13 @@ export async function getProfile(name) {
       throw new Error("Get requires a profile name");
     }
 
-    const response = await fetch(`${BASE_URL}/profiles/${name}?_listings=true`, {
-      method: "GET",
-      headers: headers(),
-    });
+    const response = await fetch(
+      `${BASE_URL}/profiles/${name}?_listings=true`,
+      {
+        method: "GET",
+        headers: headers(),
+      },
+    );
 
     if (response.ok) {
       return await response.json();

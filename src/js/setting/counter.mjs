@@ -3,7 +3,7 @@ function updateCounter(endDate, listingEndsAt, counterInterval) {
   const timeDiff = endDate.getTime() - today.getTime();
   const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
   const hoursLeft = Math.floor(
-    (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    (timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
   );
   const minutesLeft = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
   const secondsLeft = Math.floor((timeDiff % (1000 * 60)) / 1000);
@@ -12,7 +12,7 @@ function updateCounter(endDate, listingEndsAt, counterInterval) {
 
   if (timeDiff <= 0) {
     clearInterval(counterInterval);
-    listingEndsAt.innerHTML = `<i class="fa-solid fa-triangle-exclamation"></i> Listing Ended`;
+    listingEndsAt.innerHTML = `<span class="text-danger"><i class="fa-regular fa-calendar-xmark"></i>  Time is up!</span>`;
   }
 }
 
@@ -20,7 +20,7 @@ export function startCounter(endDate, listingEndsAt) {
   updateCounter(endDate, listingEndsAt);
   let counterInterval = setInterval(
     () => updateCounter(endDate, listingEndsAt),
-    1000
+    1000,
   );
 
   return counterInterval;

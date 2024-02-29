@@ -21,7 +21,7 @@ export function submitAddBidForm() {
           displayMessage(
             "addBidFormFeedback",
             "Congratulations, you are the highest bidder.",
-            "success"
+            "success",
           );
           setTimeout(() => {
             location.reload();
@@ -30,7 +30,7 @@ export function submitAddBidForm() {
           displayMessage(
             "addBidFormFeedback",
             "Ooops! Looks like you forgot to log in.",
-            "error"
+            "error",
           );
         }
       } catch (error) {

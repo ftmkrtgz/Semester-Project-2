@@ -13,7 +13,7 @@ export async function register(name, email, password, avatar) {
       return await response.json();
     } else {
       throw new Error(
-        "Sorry, we were unable to register your account. Please check your email and password and try again."
+        "Sorry, we were unable to register your account. Please check your email and password and try again.",
       );
     }
   } catch (error) {

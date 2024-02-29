@@ -10,7 +10,7 @@ export function submitRegisterForm() {
       const form = e.target;
       const formData = new FormData(form);
       const { name, email, password, avatar } = Object.fromEntries(
-        formData.entries()
+        formData.entries(),
       );
       try {
         await register(name, email, password, avatar);

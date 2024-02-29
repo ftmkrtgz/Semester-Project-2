@@ -9,7 +9,7 @@ export async function renderProfilePage() {
   const user = await getProfile(name);
 
   const profileImageContainer = document.querySelector(
-    "#profileImageContainer"
+    "#profileImageContainer",
   );
   const modalImg = document.querySelector("#avatar-preview");
   const nameContainer = document.querySelector("#nameContainer");

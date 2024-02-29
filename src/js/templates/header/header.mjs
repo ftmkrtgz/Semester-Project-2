@@ -8,7 +8,10 @@ export function header() {
   for (const element of visibleElements) {
     const visibility = element.dataset.visible;
 
-    if ((visibility === "loggedIn" && isLoggedIn) || (visibility === "loggedOut" && !isLoggedIn)) {
+    if (
+      (visibility === "loggedIn" && isLoggedIn) ||
+      (visibility === "loggedOut" && !isLoggedIn)
+    ) {
       element.style.display = "inline-block";
     } else {
       element.style.display = "none";
