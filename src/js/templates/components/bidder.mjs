@@ -3,7 +3,7 @@ function bidderTemplate(bids) {
   card.classList.add("row", "my-3", "align-items-center");
 
   const name = document.createElement("p");
-  name.classList.add("col-5", "ps-5");
+  name.classList.add("col-4", "ps-3");
   name.innerText = bids.bidderName;
 
   const date = document.createElement("p");
