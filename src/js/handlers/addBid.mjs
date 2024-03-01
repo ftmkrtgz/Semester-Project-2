@@ -20,8 +20,8 @@ export function submitAddBidForm() {
           await addBid(+inputValue, id);
           displayMessage(
             "addBidFormFeedback",
-            "Congratulations, you are the highest bidder.",
-            "success",
+            "Congratulations, You made the highest bid.",
+            "success"
           );
           setTimeout(() => {
             location.reload();
@@ -30,7 +30,7 @@ export function submitAddBidForm() {
           displayMessage(
             "addBidFormFeedback",
             "Ooops! Looks like you forgot to log in.",
-            "error",
+            "error"
           );
         }
       } catch (error) {

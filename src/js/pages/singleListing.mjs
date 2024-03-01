@@ -10,15 +10,12 @@ export async function renderSingleListingPage() {
   const id = urlParams.get("id");
 
   const listing = await getListing(id);
-
   const listingImage = document.querySelector("#listingImageContainer");
   const listingTitle = document.querySelector("#listingTitle");
-
   const listingEndsAt = document.querySelector("#listingEndsAt");
   const listingBids = document.querySelector("#listingBids");
-
   const biddingHistoryContainer = document.querySelector(
-    "#biddingHistoryContainer",
+    "#biddingHistoryContainer"
   );
   const sellerContainer = document.querySelector("#sellerContainer");
 
@@ -39,8 +36,8 @@ export async function renderSingleListingPage() {
 
   if (Array.isArray(listing.bids) && listing.bids.length === 0) {
     renderErrorMessage(
-      "The item dosn't have any bids yet",
-      biddingHistoryContainer,
+      "There are no offers yet to appear here",
+      biddingHistoryContainer
     );
   } else {
     renderBiddingHistoryTemplate(listing.bids, biddingHistoryContainer);
