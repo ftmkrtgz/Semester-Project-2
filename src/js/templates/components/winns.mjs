@@ -33,7 +33,6 @@ export function renderWinsTemplate(wins, parent) {
   parent.append(winsTemplate(wins));
 }
 export function renderWinsTemplates(winsList, parent) {
-  console.log(winsList);
   parent.innerHTML = "";
   parent.append(...winsList.map(winsTemplate));
 }

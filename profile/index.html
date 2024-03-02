@@ -21,7 +21,7 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="/"
           ><img
-            src="../../Images/Color logo with background.jpg"
+            src="../../Images/logoBackground.jpg"
             alt="Logo"
             width="150vw"
             height="80vw"
@@ -60,7 +60,7 @@
             <li class="nav-item">
               <a
                 class="nav-link"
-                id="explore"
+                id="explore1"
                 aria-current="page"
                 href="/products/"
                 >Explore</a
@@ -69,7 +69,7 @@
             <li class="nav-item">
               <a
                 class="nav-link"
-                id="explore"
+                id="explore2"
                 aria-current="page"
                 href="/profile/register/index.html"
                 data-visible="loggedOut"
@@ -90,7 +90,7 @@
               <a
                 href="/profile/"
                 class="py-1 px-2 text-decoration-none"
-                id="log-in"
+                id="log-in1"
                 data-visible="loggedIn"
               >
                 Profile
@@ -100,7 +100,7 @@
               <a
                 href="/"
                 class="focus-ring py-1 px-2 text-decoration-none bg-success text-white border rounded-2 my-2 btn-logout"
-                id="log-in"
+                id="log-in2"
                 data-visible="loggedIn"
               >
                 Log Out
@@ -189,7 +189,7 @@
                     Update Avatar Image
                   </h3>
                   <button
-                    type="url"
+                    type="button"
                     class="btn-close"
                     data-bs-dismiss="modal"
                     aria-label="Close"
@@ -266,39 +266,38 @@
 
                 <div class="form-floating mb-3">
                   <textarea
-                    type="text"
                     class="form-control"
-                    id="floatingInput"
+                    id="floatingInput1"
                     placeholder="Description"
                     name="description"
                     rows="3"
                   ></textarea>
-                  <label for="floatingInput">Description </label>
+                  <label for="floatingInput1">Description </label>
                 </div>
 
                 <div class="form-floating mb-3">
                   <input
                     type="datetime-local"
                     class="form-control"
-                    id="floatingInput"
+                    id="floatingInput2"
                     name="endsAt"
                     required
                   />
-                  <label for="floatingInput">Ends Date </label>
+                  <label for="floatingInput2">Ends Date </label>
                 </div>
 
                 <div class="form-floating mb-3">
                   <input
                     type="text"
                     class="form-control"
-                    id="floatingInput"
+                    id="floatingInput3"
                     placeholder="Tags"
                     name="tags"
                     placeholder="tags"
                     pattern="^[0-9a-zA-Z_,]*$"
                     title="Tags must be separeted by comma."
                   />
-                  <label for="floatingInput">Tags </label>
+                  <label for="floatingInput3">Tags </label>
                 </div>
 
                 <div class="form-floating mb-3">
@@ -306,6 +305,7 @@
                     type="url"
                     class="form-control border bg-input-color"
                     name="media"
+                    id="media"
                     placeholder="media"
                   />
                   <label for="media">Gallery(url) </label>

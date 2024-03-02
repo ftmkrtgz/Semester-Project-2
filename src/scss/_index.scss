@@ -13,7 +13,11 @@ body {
 }
 
 #explore,
-#log-in {
+#explore1,
+#explore2,
+#log-in,
+#log-in1,
+#log-in2 {
   color: $green;
   font-size: 24px;
 }
@@ -37,7 +41,8 @@ i {
   margin: auto;
 }
 
-#login {
+#login,
+#login1 {
   width: 100%;
   height: 70%;
   font-size: 20px;
