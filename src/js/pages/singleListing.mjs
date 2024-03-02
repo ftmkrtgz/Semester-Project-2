@@ -18,7 +18,7 @@ export async function renderSingleListingPage() {
   const listingEndsAt = document.querySelector("#listingEndsAt");
   const listingBids = document.querySelector("#listingBids");
   const biddingHistoryContainer = document.querySelector(
-    "#biddingHistoryContainer"
+    "#biddingHistoryContainer",
   );
   const sellerContainer = document.querySelector("#sellerContainer");
 
@@ -48,7 +48,7 @@ export async function renderSingleListingPage() {
   if (Array.isArray(listing.bids) && listing.bids.length === 0) {
     renderErrorMessage(
       "There are no offers yet to appear here",
-      biddingHistoryContainer
+      biddingHistoryContainer,
     );
   } else {
     renderBiddingHistoryTemplate(listing.bids, biddingHistoryContainer);

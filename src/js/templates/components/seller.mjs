@@ -12,7 +12,7 @@ function sellerTemplate(seller) {
     "avatar-img",
     "img-fluid",
     "rounded-circle",
-    "seller"
+    "seller",
   );
   avatarImg.alt = "Seller avatar";
 
