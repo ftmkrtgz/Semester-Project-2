@@ -8,7 +8,7 @@ export async function getListings() {
       {
         method: "GET",
         headers: headers(),
-      },
+      }
     );
 
     if (response.ok) {
@@ -28,7 +28,7 @@ export async function getActiveListings() {
       {
         method: "GET",
         headers: headers(),
-      },
+      }
     );
 
     if (response.ok) {
@@ -48,7 +48,7 @@ export async function getEndingSoonListings() {
       {
         method: "GET",
         headers: headers(),
-      },
+      }
     );
 
     if (response.ok) {
@@ -72,7 +72,7 @@ export async function getListing(id) {
       {
         method: "GET",
         headers: headers(),
-      },
+      }
     );
 
     if (response.ok) {

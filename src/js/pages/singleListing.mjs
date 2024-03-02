@@ -3,6 +3,9 @@ import { renderErrorMessage } from "../templates/components/error.mjs";
 import { renderSellerTemplate } from "../templates/components/seller.mjs";
 import { renderBiddingHistoryTemplate } from "../templates/components/bidder.mjs";
 import { startCounter } from "../setting/counter.mjs";
+import { deleteList } from "../handlers/deleteListing.mjs";
+import { load } from "../storage/load.mjs";
+import { getProfile } from "../api/profile/getProfile.mjs";
 
 export async function renderSingleListingPage() {
   const queryString = window.location.search;
@@ -34,6 +37,14 @@ export async function renderSingleListingPage() {
     listingBids.innerHTML += `0 $`;
   }
 
+  const { name } = load("user");
+  const user = await getProfile(name);
+  if (user.name === listing.seller.name) {
+    const deleteButton = document.getElementById("deleteBtn");
+    deleteButton.classList.remove("d-none");
+  }
+
+  deleteList(id);
   if (Array.isArray(listing.bids) && listing.bids.length === 0) {
     renderErrorMessage(
       "There are no offers yet to appear here",
