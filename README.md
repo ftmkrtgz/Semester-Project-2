@@ -2,7 +2,7 @@
 
 ## Online Auction
 
-![OnlineAuction](./Images/Ekran%20görüntüsü%202024-02-29%20102246.png)
+![OnlineAuction](/Images/screenShotSite.png)
 
 This is a semester project 2 for Front-end Development at Noroff.
 
